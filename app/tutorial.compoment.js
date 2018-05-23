@@ -7,19 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = "TEDU";
-        this.image = "http://lorempixel.com/300/300";
+var TutorialCompoment = /** @class */ (function () {
+    function TutorialCompoment() {
     }
-    AppComponent = __decorate([
+    TutorialCompoment = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <h1>Hello TEDU Online Angular 2!</h1>\n  <img [src]=\"image\"/>\n  <my-tutorial></my-tutorial>\n  ",
-            styles: ['h4 {color:blue;}']
+            selector: 'my-tutorial',
+            template: '<h2>Trang chủ công nghệ</h2>',
+            styles: ['h2 {color : red}']
         })
-    ], AppComponent);
-    return AppComponent;
+    ], TutorialCompoment);
+    return TutorialCompoment;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.compoment.js.map
+exports.TutorialCompoment = TutorialCompoment;
+//# sourceMappingURL=tutorial.compoment.js.map

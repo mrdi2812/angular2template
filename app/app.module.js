@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_compoment_1 = require("./app.compoment");
+var tutorial_compoment_1 = require("./tutorial.compoment");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [app_compoment_1.AppComponent],
+            declarations: [app_compoment_1.AppComponent, tutorial_compoment_1.TutorialCompoment],
             bootstrap: [app_compoment_1.AppComponent]
         })
     ], AppModule);
