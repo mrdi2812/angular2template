@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
     </div>
     <input type="text" [(ngModel)]="color"/>
     <ul>
-        <li *ngFor="let item of colors">{{item}}</li>
+        <li *ngFor="let item of colors">{{color}}</li>
     </ul>
     `,
 })
