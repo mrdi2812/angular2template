@@ -9,14 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialCompoment = /** @class */ (function () {
     function TutorialCompoment() {
-        this.applyClass = true;
-        this.blueColor = false;
     }
+    TutorialCompoment.prototype.MessageClick = function (value) {
+        console.log(value);
+    };
     TutorialCompoment = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <h3 [class.redClass]=\"applyClass\">Test style class</h3>\n    <h4 [style.color]=\"blueColor?'blue':'orange'\">Check</h4>\n    ",
-            styles: [".redClass{\n        color : red;\n    }"]
+            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <button (click)=\"MessageClick(name.value)\">OK</button>\n    <input type=\"text\" #name/>\n    ",
         })
     ], TutorialCompoment);
     return TutorialCompoment;
