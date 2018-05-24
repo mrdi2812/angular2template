@@ -16,7 +16,7 @@ var TutorialCompoment = /** @class */ (function () {
     TutorialCompoment = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <button (click)=\"MessageClick(name.value)\">OK</button>\n    <input type=\"text\" #name/>\n    ",
+            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <input type=\"text\" [(ngModel)]=\"fname\"/>\n    <input type=\"text\" [(ngModel)]=\"lname\"/>\n    <br/>\n    Fullname : {{fname}} {{lname}}\n    ",
         })
     ], TutorialCompoment);
     return TutorialCompoment;
