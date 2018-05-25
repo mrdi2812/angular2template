@@ -3,19 +3,26 @@ import {Component} from '@angular/core';
     selector:'my-tutorial',
     template:`<h2>Trang chủ công nghệ</h2>
     <h3 *ngIf="showLine">TUAN</h3>
-    <div [ngSwitch]="color">
-    <p *ngSwitchCase="'red'">Đây là màu đỏ</p>
-    <p *ngSwitchCase="'blue'">Đây là màu xanh</p>
-    <p *ngSwitchCase="'orange'">Đây là màu cam</p>
-    <p *ngSwitchDefault>Đây là màu mặc định</p>
+   
+    <div [ngSwitch]="mau">
+        <p *ngSwitchCase="'xanh'">Xanh</p>
+        <p *ngSwitchCase="'đỏ'">Đỏ</p>
+        <p *ngSwitchCase="'tím'">Tím</p>
+        <p *ngSwitchCase="'vàng'">Vàng</p>
+        <p *ngSwitchDefault>Mặc định</p>
     </div>
-    <input type="text" [(ngModel)]="color"/>
+    <button (click)="Load(name.value)">OK</button>
+    <input type="text" #name/>
     <ul>
-        <li *ngFor="let item of colors">{{color}}</li>
+    <li *ngFor="let item of bangmau">{{item}}</li>
     </ul>
     `,
 })
 export class TutorialCompoment{
     public showLine = false;
-    public colors: string[] = ["Trang chủ","Giới thiệu","Sản phẩm"];
+    public mau;
+    Load(value){
+        this.mau=value;
+    }
+    public bangmau: string[] = ["Trang chủ","Giới thiệu","Sản phẩm"];
 }
