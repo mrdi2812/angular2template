@@ -2,27 +2,26 @@ import {Component} from '@angular/core';
 @Component({
     selector:'my-tutorial',
     template:`<h2>Trang chủ công nghệ</h2>
-    <h3 *ngIf="showLine">TUAN</h3>
-   
-    <div [ngSwitch]="mau">
-        <p *ngSwitchCase="'xanh'">Xanh</p>
-        <p *ngSwitchCase="'đỏ'">Đỏ</p>
-        <p *ngSwitchCase="'tím'">Tím</p>
-        <p *ngSwitchCase="'vàng'">Vàng</p>
-        <p *ngSwitchDefault>Mặc định</p>
-    </div>
-    <button (click)="Load(name.value)">OK</button>
-    <input type="text" #name/>
-    <ul>
-    <li *ngFor="let item of bangmau">{{item}}</li>
-    </ul>
+    <p [ngClass]="{classColor:cone,classMaunen:ctow}">Áp dụng style cho văn bản</p>
+    <button (click)="Load()">OK</button>
+    <p [ngStyle]="{'font-style':style,'font-size':size}">Cộng hòa xã hội chủ nghĩa Việt Nam</p>
     `,
+    styles:[`
+        .classColor{
+            color: white;
+        }
+        .classMaunen{
+            background-color:orange;
+        }
+    `]
 })
 export class TutorialCompoment{
-    public showLine = false;
-    public mau;
-    Load(value){
-        this.mau=value;
-    }
-    public bangmau: string[] = ["Trang chủ","Giới thiệu","Sản phẩm"];
+ public cone = true;
+ public ctow = true;
+ public style = "italic";
+ public size = 11;
+ Load(){
+     this.cone = !this.cone;
+     this.ctow = !this.ctow;
+ }
 }

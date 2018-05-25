@@ -9,16 +9,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialCompoment = /** @class */ (function () {
     function TutorialCompoment() {
-        this.showLine = false;
-        this.bangmau = ["Trang chủ", "Giới thiệu", "Sản phẩm"];
+        this.cone = true;
+        this.ctow = true;
+        this.style = "italic";
+        this.size = 11;
     }
-    TutorialCompoment.prototype.Load = function (value) {
-        this.mau = value;
+    TutorialCompoment.prototype.Load = function () {
+        this.cone = !this.cone;
+        this.ctow = !this.ctow;
     };
     TutorialCompoment = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <h3 *ngIf=\"showLine\">TUAN</h3>\n   \n    <div [ngSwitch]=\"mau\">\n        <p *ngSwitchCase=\"'xanh'\">Xanh</p>\n        <p *ngSwitchCase=\"'\u0111\u1ECF'\">\u0110\u1ECF</p>\n        <p *ngSwitchCase=\"'t\u00EDm'\">T\u00EDm</p>\n        <p *ngSwitchCase=\"'v\u00E0ng'\">V\u00E0ng</p>\n        <p *ngSwitchDefault>M\u1EB7c \u0111\u1ECBnh</p>\n    </div>\n    <button (click)=\"Load(name.value)\">OK</button>\n    <input type=\"text\" #name/>\n    <ul>\n    <li *ngFor=\"let item of bangmau\">{{item}}</li>\n    </ul>\n    ",
+            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <p [ngClass]=\"{classColor:cone,classMaunen:ctow}\">\u00C1p d\u1EE5ng style cho v\u0103n b\u1EA3n</p>\n    <button (click)=\"Load()\">OK</button>\n    <p [ngStyle]=\"{'font-style':style,'font-size':size}\">C\u1ED9ng h\u00F2a x\u00E3 h\u1ED9i ch\u1EE7 ngh\u0129a Vi\u1EC7t Nam</p>\n    ",
+            styles: ["\n        .classColor{\n            color: white;\n        }\n        .classMaunen{\n            background-color:orange;\n        }\n    "]
         })
     ], TutorialCompoment);
     return TutorialCompoment;
