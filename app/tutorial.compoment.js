@@ -5,24 +5,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialCompoment = /** @class */ (function () {
     function TutorialCompoment() {
-        this.cone = true;
-        this.ctow = true;
-        this.style = "italic";
-        this.size = 11;
+        this.onVote = new core_1.EventEmitter();
+        this.voted = false;
     }
-    TutorialCompoment.prototype.Load = function () {
-        this.cone = !this.cone;
-        this.ctow = !this.ctow;
+    TutorialCompoment.prototype.vote = function (trangthai) {
+        this.voted = true;
+        this.onVote.emit(trangthai);
     };
+    TutorialCompoment.prototype.setName = function (name) {
+        this.name = name;
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], TutorialCompoment.prototype, "name", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], TutorialCompoment.prototype, "onVote", void 0);
     TutorialCompoment = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "<h2>Trang ch\u1EE7 c\u00F4ng ngh\u1EC7</h2>\n    <p [ngClass]=\"{classColor:cone,classMaunen:ctow}\">\u00C1p d\u1EE5ng style cho v\u0103n b\u1EA3n</p>\n    <button (click)=\"Load()\">OK</button>\n    <p [ngStyle]=\"{'font-style':style,'font-size':size}\">C\u1ED9ng h\u00F2a x\u00E3 h\u1ED9i ch\u1EE7 ngh\u0129a Vi\u1EC7t Nam</p>\n    ",
-            styles: ["\n        .classColor{\n            color: white;\n        }\n        .classMaunen{\n            background-color:orange;\n        }\n    "]
+            template: "\n    <p>Gi\u00E1 tr\u1ECB c\u1EE7a cha : {{name}}</p>\n    <br/>\n    <button [disabled]=\"voted\" (click)=\"vote(true)\">\u0110\u1ED3ng \u00FD</button>\n    <button [disabled]=\"voted\" (click)=\"vote(false)\">Kh\u00F4ng \u0111\u1ED3ng \u00FD</button>\n    K\u1EBFt qu\u1EA3 : {{voted}}\n    ",
         })
     ], TutorialCompoment);
     return TutorialCompoment;
