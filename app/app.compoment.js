@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.cities = [{ Id: 1, Name: "Hà Nội" }, { Id: 2, Name: "Hồ Chí Minh" }];
     }
     AppComponent.prototype.onSubmit = function (value) {
         console.log(value);
@@ -17,6 +18,7 @@ var AppComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/app.compoment.html',
+            styleUrls: ['app/app.compoment.css'],
         })
     ], AppComponent);
     return AppComponent;
