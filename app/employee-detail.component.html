@@ -1,0 +1,22 @@
+<table *ngIf="employeedetail">
+    <tr>
+        <td>Id</td>
+        <td>{{employeedetail.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{employeedetail.name}}</td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>{{employeedetail.Age}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{employeedetail.Status}}</td>
+    </tr>
+</table>
+<a class="btn btn-default" [routerLink]="['overview']">OverViewer</a>
+<a class="btn btn-default" [routerLink]="['project']">OverProject</a>
+<a class="btn btn-default" [routerLink]="['/employee']">Go black</a>
+<router-outlet></router-outlet>

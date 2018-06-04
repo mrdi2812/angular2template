@@ -9,26 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var login_service_1 = require("../service/login.service");
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
-var EmployeeService = /** @class */ (function () {
-    function EmployeeService(_http) {
-        this._http = _http;
-        this.apiUrl = "http://5b0ec63e3c5c110014145c4f.mockapi.io/api/employees/";
+var CheckLoginGuards = /** @class */ (function () {
+    function CheckLoginGuards(loginService) {
+        this.loginService = loginService;
     }
-    EmployeeService.prototype.GetList = function () {
-        return this._http.get(this.apiUrl).map(function (response) { return response.json(); });
+    CheckLoginGuards.prototype.canActivate = function () {
+        return this.loginService.IsLogined();
     };
-    EmployeeService.prototype.GetDetail = function (id) {
-        var url = this.apiUrl + "/" + id;
-        return this._http.get(url).map(function (response) { return response.json(); });
-    };
-    EmployeeService = __decorate([
+    CheckLoginGuards = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
-    ], EmployeeService);
-    return EmployeeService;
+        __metadata("design:paramtypes", [login_service_1.LoginService])
+    ], CheckLoginGuards);
+    return CheckLoginGuards;
 }());
-exports.EmployeeService = EmployeeService;
-//# sourceMappingURL=app.employee.service.js.map
+exports.CheckLoginGuards = CheckLoginGuards;
+//# sourceMappingURL=check-login.guards.js.map

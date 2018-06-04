@@ -10,30 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var login_service_1 = require("./service/login.service");
 var router_1 = require("@angular/router");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(loginService, router) {
-        this.loginService = loginService;
+var EmployeeOverViewerComponent = /** @class */ (function () {
+    function EmployeeOverViewerComponent(router, activedRouter) {
         this.router = router;
+        this.activedRouter = activedRouter;
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this._isLogined = this.loginService.IsLogined();
+    EmployeeOverViewerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.activedRouter.parent.params.subscribe(function (paras) {
+            _this.routerId = paras['id'];
+            alert(_this.routerId);
+        });
     };
-    AppComponent.prototype.Logout = function () {
-        this.loginService.SetLogin(false);
-        alert("Logout assets");
-        this.router.navigate(['login']);
+    EmployeeOverViewerComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
     };
-    AppComponent = __decorate([
+    EmployeeOverViewerComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.compoment.html',
-            styleUrls: ['app/app.compoment.css'],
+            selector: 'employee-overviewer',
+            template: "<h3>Overviewer template</h3>"
         }),
-        __metadata("design:paramtypes", [login_service_1.LoginService, router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
+    ], EmployeeOverViewerComponent);
+    return EmployeeOverViewerComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.compoment.js.map
+exports.EmployeeOverViewerComponent = EmployeeOverViewerComponent;
+//# sourceMappingURL=employee-overview.component.js.map

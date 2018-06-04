@@ -1,11 +1,12 @@
 <html>
   <head>
+      <base href="/">
     <title>Angular QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="app/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="app/assets/css/heroic-features.css" rel="stylesheet">
     <!-- 1. Load libraries -->
      <!-- Polyfill for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -20,7 +21,8 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <h4>Chào mừng đến với ES6</h4>
     <my-app>Loading...</my-app>
+    <script src="app/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<form class="form-horizontal" #fr="ngForm"(ngSubmit)="CheckLogin(fr.value)">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">User name</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control"  placeholder="User"  name="username" ngModel >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+      <div class="col-md-6">
+        <input type="password" class="form-control"  placeholder="Password"  name="password" ngModel >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-default">Sign in</button>
+      </div>
+    </div>
+  </form>
