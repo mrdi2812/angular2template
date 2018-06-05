@@ -7,19 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var LoginService = /** @class */ (function () {
-    function LoginService() {
+var CheckLoginService = /** @class */ (function () {
+    function CheckLoginService() {
     }
-    LoginService.prototype.IsLogined = function () {
-        return this._isLogined;
+    CheckLoginService.prototype.IsLogined = function () {
+        return this.isLogined;
     };
-    LoginService.prototype.SetLogin = function (isLogined) {
-        this._isLogined = isLogined;
+    CheckLoginService.prototype.SetLogined = function (_isLogin) {
+        this.isLogined = _isLogin;
     };
-    LoginService = __decorate([
+    CheckLoginService = __decorate([
         core_1.Injectable()
-    ], LoginService);
-    return LoginService;
+    ], CheckLoginService);
+    return CheckLoginService;
 }());
-exports.LoginService = LoginService;
-//# sourceMappingURL=login.service.js.map
+exports.CheckLoginService = CheckLoginService;
+//# sourceMappingURL=check-login.service.js.map

@@ -1,28 +1,39 @@
 <html>
-  <head>
-      <base href="/">
-    <title>Angular QuickStart</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="app/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="app/assets/css/heroic-features.css" rel="stylesheet">
-    <!-- 1. Load libraries -->
-     <!-- Polyfill for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-    <script src="app/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+<head>
+  <base href="/">
+  <title>Angular QuickStart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="app/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="app/assets/css/scrolling-nav.css" rel="stylesheet">
+  <link href="app/assets/css/doc.min.css" rel="stylesheet">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function (err) { console.error(err); });
+  </script>
+</head>
+<!-- 3. Display the application -->
+
+<body id="page-top">
+  
+  <my-app>Loading...</my-app>
+  <script src="app/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="app/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="app/assets/js/scrolling-nav.js"></script>
+</body>
+
 </html>

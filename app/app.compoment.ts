@@ -1,23 +1,19 @@
-import { Component, ViewChild,OnInit } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginService } from './service/login.service';
 import {Router} from '@angular/router';
+import { CheckLoginService } from './service/check-login.service';
 @Component({
   selector: 'my-app',
   templateUrl:'app/app.compoment.html',
   styleUrls:['app/app.compoment.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public _isLogined : boolean;
-  constructor(private loginService : LoginService,private router : Router){
+  constructor(private router : Router,private loginService : CheckLoginService){
 
   }
-  ngOnInit(){
-    this._isLogined = this.loginService.IsLogined();
+  Logout(){
+    this.loginService.SetLogined(false);
+    this.router.navigate(['login']);
   }
- Logout(){
-  this.loginService.SetLogin(false);
-  alert("Logout assets")
-  this.router.navigate(['login']);
- }
 }

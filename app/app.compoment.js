@@ -10,19 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var login_service_1 = require("./service/login.service");
 var router_1 = require("@angular/router");
+var check_login_service_1 = require("./service/check-login.service");
 var AppComponent = /** @class */ (function () {
-    function AppComponent(loginService, router) {
-        this.loginService = loginService;
+    function AppComponent(router, loginService) {
         this.router = router;
+        this.loginService = loginService;
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this._isLogined = this.loginService.IsLogined();
-    };
     AppComponent.prototype.Logout = function () {
-        this.loginService.SetLogin(false);
-        alert("Logout assets");
+        this.loginService.SetLogined(false);
         this.router.navigate(['login']);
     };
     AppComponent = __decorate([
@@ -31,7 +27,7 @@ var AppComponent = /** @class */ (function () {
             templateUrl: 'app/app.compoment.html',
             styleUrls: ['app/app.compoment.css'],
         }),
-        __metadata("design:paramtypes", [login_service_1.LoginService, router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, check_login_service_1.CheckLoginService])
     ], AppComponent);
     return AppComponent;
 }());

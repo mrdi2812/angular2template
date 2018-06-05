@@ -1,0 +1,1 @@
+{"version":3,"file":"check-login.service.js","sourceRoot":"","sources":["check-login.service.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAAyC;AAEzC;IAAA;IAQA,CAAC;IANG,qCAAS,GAAT;QACG,OAAO,IAAI,CAAC,SAAS,CAAC;IACzB,CAAC;IACD,sCAAU,GAAV,UAAW,QAAkB;QACzB,IAAI,CAAC,SAAS,GAAG,QAAQ,CAAC;IAC9B,CAAC;IAPQ,iBAAiB;QAD7B,iBAAU,EAAE;OACA,iBAAiB,CAQ7B;IAAD,wBAAC;CAAA,AARD,IAQC;AARY,8CAAiB"}

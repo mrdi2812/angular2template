@@ -13,6 +13,9 @@ import { NotFoundComponent } from './notfound.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverViewerComponent } from './employee-overview.component';
 import { EmployeeProjectComponent } from './employee-project.component';
+import { LoginComponent } from './login.component';
+import { CheckLoginService } from './service/check-login.service';
+import { CheckLoginGuards } from './guards/check-login.guards';
 @NgModule({
   imports:      [ BrowserModule,FormsModule,HttpModule,appRouters],
   declarations: [ 
@@ -24,8 +27,9 @@ import { EmployeeProjectComponent } from './employee-project.component';
     NotFoundComponent,
     EmployeeDetailComponent,
     EmployeeOverViewerComponent,
-    EmployeeProjectComponent],
-  providers : [EmployeeService],
+    EmployeeProjectComponent,
+    LoginComponent],
+  providers : [EmployeeService,CheckLoginService,CheckLoginGuards],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

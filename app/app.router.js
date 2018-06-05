@@ -8,12 +8,10 @@ var employee_detail_component_1 = require("./employee-detail.component");
 var employee_overview_component_1 = require("./employee-overview.component");
 var employee_project_component_1 = require("./employee-project.component");
 var login_component_1 = require("./login.component");
-var check_login_guards_1 = require("./guards/check-login.guards");
-var check_save_guards_1 = require("./guards/check-save.guards");
 var routing = [
     { path: '', component: home_component_1.HomeConponent },
-    { path: 'employee', component: app_employee_compoment_1.EmployeeCompoment, canActivate: [check_login_guards_1.CheckLoginGuards] },
-    { path: 'employee-detail/:id', component: employee_detail_component_1.EmployeeDetailComponent, canActivate: [check_login_guards_1.CheckLoginGuards], canDeactivate: [check_save_guards_1.CheckSaveGuards], children: [
+    { path: 'employee', component: app_employee_compoment_1.EmployeeCompoment },
+    { path: 'employee-detail/:id', component: employee_detail_component_1.EmployeeDetailComponent, children: [
             { path: 'overview', component: employee_overview_component_1.EmployeeOverViewerComponent },
             { path: 'project', component: employee_project_component_1.EmployeeProjectComponent }
         ] },

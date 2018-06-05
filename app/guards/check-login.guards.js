@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var login_service_1 = require("../service/login.service");
 var core_1 = require("@angular/core");
+var check_login_service_1 = require("../service/check-login.service");
 var CheckLoginGuards = /** @class */ (function () {
     function CheckLoginGuards(loginService) {
         this.loginService = loginService;
@@ -20,7 +20,7 @@ var CheckLoginGuards = /** @class */ (function () {
     };
     CheckLoginGuards = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [login_service_1.LoginService])
+        __metadata("design:paramtypes", [check_login_service_1.CheckLoginService])
     ], CheckLoginGuards);
     return CheckLoginGuards;
 }());

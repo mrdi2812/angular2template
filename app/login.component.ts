@@ -1,23 +1,21 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginService } from './service/login.service';
+import {Component} from'@angular/core';
+import { CheckLoginService } from './service/check-login.service';
+import {Router} from '@angular/router';
 @Component({
-    selector: 'login-component',
-    templateUrl: './app/login.component.html'
+    selector : 'login-component',
+    templateUrl:'./app/login.component.html'
 })
-export class LoginComponent {
-    constructor(private router: Router, private logginService: LoginService) {
+export class LoginComponent{
+    constructor(private loginService : CheckLoginService,private router : Router){
 
     }
-    CheckLogin(value: any) {
-        console.log(value);
-        if (value.username == "admin" && value.password == "123") {
-            this.logginService.SetLogin(true);
+    CheckLogin(value : any){
+        if(value.username=="admin"&&value.password=="123"){
+            this.loginService.SetLogined(true);
             this.router.navigate(['/']);
         }
-        else {
-            this.logginService.SetLogin(false);
+        else{
+            this.loginService.SetLogined(false);
         }
-
     }
 }

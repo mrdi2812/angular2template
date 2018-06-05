@@ -1,12 +1,12 @@
-import{CanActivate} from'@angular/router';
-import {LoginService} from '../service/login.service';
-import { Injectable } from '@angular/core';
+import {CanActivate} from '@angular/router';
+import {Injectable} from '@angular/core';
+import { CheckLoginService } from '../service/check-login.service';
 @Injectable()
-export class CheckLoginGuards implements CanActivate {
-    constructor(private loginService:LoginService){
+export class CheckLoginGuards implements CanActivate{
+    constructor(private loginService : CheckLoginService){
 
     }
-   canActivate(){
-       return this.loginService.IsLogined();
-   }
+    canActivate(){
+        return this.loginService.IsLogined();
+    }
 }

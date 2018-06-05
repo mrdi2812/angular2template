@@ -11,24 +11,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var app_employee_service_1 = require("./service/app.employee.service");
+var router_1 = require("@angular/router");
 var EmployeeCompoment = /** @class */ (function () {
-    function EmployeeCompoment(employeeService) {
+    function EmployeeCompoment(employeeService, activeRouter) {
         this.employeeService = employeeService;
+        this.activeRouter = activeRouter;
     }
     EmployeeCompoment.prototype.ngOnInit = function () {
         var _this = this;
+        this.activeRouter.queryParams.subscribe(function (params) {
+            _this.indexPage = params['page'];
+            _this.fitter = params['fitter'];
+            console.log(_this.indexPage);
+            console.log(_this.fitter);
+        });
         this.employeeService.GetList().subscribe(function (response) {
             _this.employees = response;
         }, function (error) {
             console.log("Lỗi không load được dữ liệu nguồn");
         });
+        this.pages = [1, 2, 3, 4, 5];
     };
     EmployeeCompoment = __decorate([
         core_1.Component({
             selector: 'employee-list',
             templateUrl: './app/app.employee.compoment.html'
         }),
-        __metadata("design:paramtypes", [app_employee_service_1.EmployeeService])
+        __metadata("design:paramtypes", [app_employee_service_1.EmployeeService, router_1.ActivatedRoute])
     ], EmployeeCompoment);
     return EmployeeCompoment;
 }());

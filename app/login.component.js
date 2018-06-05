@@ -10,21 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var check_login_service_1 = require("./service/check-login.service");
 var router_1 = require("@angular/router");
-var login_service_1 = require("./service/login.service");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(router, logginService) {
+    function LoginComponent(loginService, router) {
+        this.loginService = loginService;
         this.router = router;
-        this.logginService = logginService;
     }
     LoginComponent.prototype.CheckLogin = function (value) {
-        console.log(value);
         if (value.username == "admin" && value.password == "123") {
-            this.logginService.SetLogin(true);
+            this.loginService.SetLogined(true);
             this.router.navigate(['/']);
         }
         else {
-            this.logginService.SetLogin(false);
+            this.loginService.SetLogined(false);
         }
     };
     LoginComponent = __decorate([
@@ -32,7 +31,7 @@ var LoginComponent = /** @class */ (function () {
             selector: 'login-component',
             templateUrl: './app/login.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.Router, login_service_1.LoginService])
+        __metadata("design:paramtypes", [check_login_service_1.CheckLoginService, router_1.Router])
     ], LoginComponent);
     return LoginComponent;
 }());

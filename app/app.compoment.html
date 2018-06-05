@@ -18,16 +18,18 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
                 </li>
-                <li class="nav-item" *ngIf="!isLogined">               
+                <li class="nav-item">
                     <a class="nav-link" (click)="Logout()">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<section id="about">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</section>
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
