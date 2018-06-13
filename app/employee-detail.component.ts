@@ -24,7 +24,7 @@ export class EmployeeDetailComponent implements OnInit,OnDestroy {
         })
     }
     Go(){
-        this.router.navigate(["employee"]);
+        this.router.navigate(["employees"]);
     } 
     ngOnDestroy(){
         this.subscription.unsubscribe();

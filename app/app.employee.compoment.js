@@ -25,12 +25,36 @@ var EmployeeCompoment = /** @class */ (function () {
             console.log(_this.indexPage);
             console.log(_this.fitter);
         });
+        this.LoadData();
+        this.pages = [1, 2, 3, 4, 5];
+    };
+    EmployeeCompoment.prototype.Delete = function (id) {
+        var _this = this;
+        var confirmResult = confirm("Bạn có muốn xóa không?");
+        if (confirmResult) {
+            this.employeeService.DeleteData(id).subscribe(function (response) {
+                if (response) {
+                    alert("Xóa thành công");
+                    _this.LoadData();
+                }
+            });
+        }
+    };
+    EmployeeCompoment.prototype.LoadData = function () {
+        var _this = this;
         this.employeeService.GetList().subscribe(function (response) {
             _this.employees = response;
         }, function (error) {
             console.log("Lỗi không load được dữ liệu nguồn");
         });
-        this.pages = [1, 2, 3, 4, 5];
+    };
+    EmployeeCompoment.prototype.Seach = function (keyword) {
+        var _this = this;
+        this.employeeService.SeachData(keyword).subscribe(function (response) {
+            _this.employees = response;
+        }, function (error) {
+            console.log("Không có dữ liệu");
+        });
     };
     EmployeeCompoment = __decorate([
         core_1.Component({

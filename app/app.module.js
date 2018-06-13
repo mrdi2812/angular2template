@@ -24,6 +24,8 @@ var employee_project_component_1 = require("./employee-project.component");
 var login_component_1 = require("./login.component");
 var check_login_service_1 = require("./service/check-login.service");
 var check_login_guards_1 = require("./guards/check-login.guards");
+var employee_edit_component_1 = require("./employee-edit.component");
+var employee_add_component_1 = require("./employee-add.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -35,12 +37,14 @@ var AppModule = /** @class */ (function () {
                 reverse_str_pipe_1.ReverseStr,
                 reverse_str_pipe_2.UselessPipe,
                 app_employee_compoment_1.EmployeeCompoment,
+                employee_edit_component_1.EmployeeEditComponent,
                 home_component_1.HomeConponent,
                 notfound_component_1.NotFoundComponent,
                 employee_detail_component_1.EmployeeDetailComponent,
                 employee_overview_component_1.EmployeeOverViewerComponent,
                 employee_project_component_1.EmployeeProjectComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                employee_add_component_1.EmployeeAddComponent
             ],
             providers: [app_employee_service_1.EmployeeService, check_login_service_1.CheckLoginService, check_login_guards_1.CheckLoginGuards],
             bootstrap: [app_compoment_1.AppComponent]

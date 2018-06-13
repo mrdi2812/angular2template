@@ -7,9 +7,13 @@ import { EmployeeOverViewerComponent } from './employee-overview.component';
 import { EmployeeProjectComponent } from './employee-project.component';
 import { LoginComponent } from './login.component';
 import { CheckLoginGuards } from './guards/check-login.guards';
+import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 const routing : Routes = [
     {path:'',component:HomeConponent},
-    {path:'employee',component:EmployeeCompoment},
+    {path:'employees',component:EmployeeCompoment},
+    {path:'employee-add',component:EmployeeAddComponent},
+    {path:'employee-edit/:id',component:EmployeeEditComponent},
     {path:'employee-detail/:id',component:EmployeeDetailComponent,children:[
         {path:'overview',component:EmployeeOverViewerComponent},
         {path:'project',component:EmployeeProjectComponent}

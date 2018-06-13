@@ -16,6 +16,8 @@ import { EmployeeProjectComponent } from './employee-project.component';
 import { LoginComponent } from './login.component';
 import { CheckLoginService } from './service/check-login.service';
 import { CheckLoginGuards } from './guards/check-login.guards';
+import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 @NgModule({
   imports:      [ BrowserModule,FormsModule,HttpModule,appRouters],
   declarations: [ 
@@ -23,12 +25,14 @@ import { CheckLoginGuards } from './guards/check-login.guards';
     ReverseStr,
     UselessPipe,
     EmployeeCompoment,
+    EmployeeEditComponent,
     HomeConponent,
     NotFoundComponent,
     EmployeeDetailComponent,
     EmployeeOverViewerComponent,
     EmployeeProjectComponent,
-    LoginComponent],
+    LoginComponent,
+    EmployeeAddComponent],
   providers : [EmployeeService,CheckLoginService,CheckLoginGuards],
   bootstrap:    [ AppComponent ]
 })

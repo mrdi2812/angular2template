@@ -12,37 +12,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var app_employee_service_1 = require("./service/app.employee.service");
-var EmployeeDetailComponent = /** @class */ (function () {
-    function EmployeeDetailComponent(router, activateRouter, employeeService) {
+var EmployeeAddComponent = /** @class */ (function () {
+    function EmployeeAddComponent(router, activateRouter, employeeService) {
         this.router = router;
         this.activateRouter = activateRouter;
         this.employeeService = employeeService;
     }
-    EmployeeDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subscription = this.activateRouter.params.subscribe(function (params) {
-            _this._id = params['id'];
-            _this.employeeService.GetDetail(_this._id).subscribe(function (response) {
-                _this.employeedetail = response;
-            }, function (error) {
-                console.log("Lỗi không load được dữ liệu nguồn");
-            });
-        });
+    EmployeeAddComponent.prototype.ngOnInit = function () {
+        this.employee = {};
     };
-    EmployeeDetailComponent.prototype.Go = function () {
+    EmployeeAddComponent.prototype.GoBlack = function () {
         this.router.navigate(["employees"]);
     };
-    EmployeeDetailComponent.prototype.ngOnDestroy = function () {
-        this.subscription.unsubscribe();
+    EmployeeAddComponent.prototype.SaveForm = function () {
+        var _this = this;
+        this.employeeService.AddData(this.employee).subscribe(function (response) {
+            if (response) {
+                alert("Thêm thành công");
+                _this.router.navigate(['employees']);
+            }
+        });
     };
-    EmployeeDetailComponent = __decorate([
+    EmployeeAddComponent = __decorate([
         core_1.Component({
-            selector: 'employee-detail',
-            templateUrl: './app/employee-detail.component.html'
+            selector: 'employee-add',
+            templateUrl: './app/employee-add.component.html'
         }),
         __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute, app_employee_service_1.EmployeeService])
-    ], EmployeeDetailComponent);
-    return EmployeeDetailComponent;
+    ], EmployeeAddComponent);
+    return EmployeeAddComponent;
 }());
-exports.EmployeeDetailComponent = EmployeeDetailComponent;
-//# sourceMappingURL=employee-detail.component.js.map
+exports.EmployeeAddComponent = EmployeeAddComponent;
+//# sourceMappingURL=employee-add.component.js.map

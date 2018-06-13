@@ -24,6 +24,22 @@ var EmployeeService = /** @class */ (function () {
         var url = this.apiUrl + "/" + id;
         return this._http.get(url).map(function (response) { return response.json(); });
     };
+    EmployeeService.prototype.AddData = function (data) {
+        var url = "" + this.apiUrl;
+        return this._http.post(this.apiUrl, data).map(function (response) { return response.json(); });
+    };
+    EmployeeService.prototype.UpdateData = function (data) {
+        var url = this.apiUrl + "/" + data.id;
+        return this._http.put(url, data).map(function (response) { return response.json(); });
+    };
+    EmployeeService.prototype.DeleteData = function (id) {
+        var url = this.apiUrl + "/" + id;
+        return this._http.delete(url).map(function (response) { return response.json(); });
+    };
+    EmployeeService.prototype.SeachData = function (chuoi) {
+        var url = this.apiUrl + "/?search=" + chuoi;
+        return this._http.get(url).map(function (response) { return response.json(); });
+    };
     EmployeeService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

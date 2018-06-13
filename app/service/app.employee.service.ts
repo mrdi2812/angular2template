@@ -14,4 +14,20 @@ export class EmployeeService{
         const url = `${this.apiUrl}/${id}`;
         return this._http.get(url).map((response: Response)=>response.json());
     }
+    AddData(data:any):Observable<any>{
+        const  url = `${this.apiUrl}`;
+        return this._http.post(this.apiUrl,data).map((response: Response)=>response.json());
+    }
+    UpdateData(data:any):Observable<any>{
+        const  url = `${this.apiUrl}/${data.id}`;
+        return this._http.put(url,data).map((response: Response)=>response.json());
+    }
+    DeleteData(id:number):Observable<any>{
+        const  url = `${this.apiUrl}/${id}`;
+        return this._http.delete(url).map((response: Response)=>response.json());
+    }
+    SeachData(chuoi:string):Observable<any>{
+        const  url = `${this.apiUrl}/?search=${chuoi}`;
+        return this._http.get(url).map((response: Response)=>response.json());
+    }
 }

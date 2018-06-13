@@ -1,4 +1,19 @@
-<table class="table table-hover">
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <input class="form-control" type="text" [(ngModel)]="keyword"/>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success" (click)="Seach(keyword)">Tìm kiếm</button>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <button class="btn btn default" [routerLink]="['/employee-add']">Thêm mới</button>
+        </div>
+    </div>
+</div>
+<table class="table table-hover" *ngIf="employees">
     <thead>
         <tr>
             <td>ID</td>
@@ -16,12 +31,26 @@
             <td>{{item.Age}}</td>
             <td>{{item.createdAt| date:'dd/MM/yyyy'}}</td>
             <td>{{item.Status}}</td>
-            <td><a [routerLink]="['/employee-detail',item.id]">Detail</a></td>
+            <td>
+                <a [routerLink]="['/employee-detail',item.id]" class="btn btn-success">Detail</a>
+            </td>
+            <td>
+                <a [routerLink]="['/employee-edit',item.id]" class="btn btn-success">Edit</a>
+            </td>
+            <td>
+                <button (click)="Delete(item.id)" class="btn btn-danger">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
 <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li *ngFor="let page of pages"><a [routerLink]="['/employee']" [queryParams]="{page:page,fitter:'a'}">{{page}}</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
+    <li>
+        <a href="#">&laquo;</a>
+    </li>
+    <li *ngFor="let page of pages">
+        <a [routerLink]="['/employee']" [queryParams]="{page:page,fitter:'a'}">{{page}}</a>
+    </li>
+    <li>
+        <a href="#">&raquo;</a>
+    </li>
+</ul>
